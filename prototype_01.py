@@ -150,11 +150,6 @@ print(person2.state)
 
 print(object_data)
 
-# print(super_market.generate_report())
-# for item in people:
-#     print(item.id)
-
-
 # 1. 1243 - Jim
 # 2. 3242 - no name provided
 
