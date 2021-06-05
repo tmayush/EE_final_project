@@ -129,13 +129,10 @@ class Person:
 # class Menu:
 #     def __init__(self) -> None:
 #         pass
-
 #     def stateful_menu(self, state):
 #         menu_array = global_states.get(state, "invalid state")
 #         for index, item in enumerate(menu_array):
 #             print(f"{index+1}. " f"{item}")
-
-
 # menu = Menu()
 # menu.stateful_menu("global")
 
