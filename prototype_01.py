@@ -46,6 +46,7 @@ object_data = {"People": [people, people_ids], "Supermarkets": [supermarkets, sp
 #         "Choose Person",
 #     ]
 # }
+
 # products = ["Milk", "Cerial"]
 # products = {"Dairy": ["Milk"],"Fasion":[]}
 # States that a person can have:
