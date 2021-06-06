@@ -4,6 +4,10 @@
 
 ## Current Ideas
 
+> ### \#421
+>
+> Add a bad.look() function in the Person class so that a person can see the current items that they have in their bag in the present moment
+
 > ### \#422
 >
 > Adding a feature to keep track of the stocks of induvidual items in supermarkets
