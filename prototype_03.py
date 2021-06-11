@@ -317,5 +317,5 @@ if __name__ == "__main__":
     global_functions = GlobalFunctions(my_admin)
     menu = Menu(my_admin)
     menu.stateful_menu()
-    print(my_admin.selected_person)
-# object_data = {"People": [[], []], "Supermarkets": [[], []]}
+    # print(my_admin.selected_person)
+    # object_data = {"People": [[], []], "Supermarkets": [[], []]}
