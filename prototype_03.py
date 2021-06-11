@@ -24,6 +24,7 @@ class Admin:
 class GlobalFunctions:
     def __init__(self, my_admin) -> None:
         self.my_admin = my_admin
+        self.my_menu = None
 
     def create_supermarket(self):
         id_list = self.my_admin.object_data["Supermarkets"][1]
@@ -149,11 +150,19 @@ class GlobalFunctions:
                 else:
                     print("Invalid Serial Number\n")
 
+    def back_functions(self):
+        back_statements = {
+            "in_market": "person",
+            "person": "global",
+        }
+
+        self.my_menu.state = back_statements[self.my_menu.state]
+
     def pre_tests(self, state):
         def pre_person():
             return [[self.my_admin.selected_person.name.upper()]]
 
-        pre_content = {"global": None, "person": pre_person, "in_market": None}
+        pre_content = {"global": None, "person": pre_person, "in_market": pre_person}
         if pre_content[state]:
             final_str = ""
             for arr in pre_content[state]():
@@ -226,7 +235,6 @@ class Person:
         self.menu = menu
         self.start_time = None
         self.end_time = None
-        self.state = "out_market"
 
     def time_elapsed(self):
         calc_time_elapsed = time.time() - self.start_time
@@ -239,7 +247,6 @@ class Person:
             print("Welcome\n")
             self.super_market.add_person(self)
             self.start_time = time.time()
-            self.state = "in_market"
             self.menu.state = "in_market"
         else:
             print("Sorry Not Allowed!")
@@ -291,13 +298,13 @@ class Menu:
             self.global_states["person"] = [
                 {"Enter Supermarket": my_admin.selected_person.enter_market},
                 {"Exit Supermarket": None},
-                {"back": False},
+                {"back": global_functions.back_functions},
             ]
             self.global_states["in_market"] = [
                 {"Choose Products": None},
                 {"Look Inside Bag": my_admin.selected_person.check_bag},
                 {"Check Time Elapsed": my_admin.selected_person.time_elapsed},
-                {"back": False},
+                {"back": global_functions.back_functions},
             ]
 
     def pre_post(self, menu_array):
@@ -310,9 +317,13 @@ class Menu:
     def stateful_menu(self):
         while True:
             menu_array = self.global_states.get(self.state, "invalid state")
+            menu_array_length = len(menu_array)
             self.pre_post(menu_array)
             user_input = handle_input(int, "Choose an option: ", "Error: Not a number")
             print()
+            if user_input < 1 or user_input > menu_array_length:
+                print("Invalid Index\n")
+                continue
             user_input = menu_array[user_input - 1]
             callback_function = list(user_input.values())[0]
             if callback_function == global_functions.choose_person:
@@ -328,6 +339,5 @@ if __name__ == "__main__":
     my_admin = Admin()
     global_functions = GlobalFunctions(my_admin)
     menu = Menu(my_admin)
+    global_functions.my_menu = menu
     menu.stateful_menu()
-    # print(my_admin.selected_person)
-
