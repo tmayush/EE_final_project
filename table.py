@@ -45,6 +45,7 @@ def create_table(my_list, width_factor, absolute_width=False):
 
 if __name__ == "__main__":
     hello = [
+        ["Products", "Price", "Quantity"],
         ["Cofeee", "24", "1"],
         ["Hamburger", "2454", "2"],
         ["Pancakes", "44", "1"],

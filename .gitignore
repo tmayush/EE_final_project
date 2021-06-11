@@ -3,6 +3,10 @@
 *test*
 /__pycache__
 
+# tesign cases
+prototype_01.py
+prototype_02.py
+
 # Public Files
 *public*
 

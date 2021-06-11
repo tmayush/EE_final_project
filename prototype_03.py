@@ -2,6 +2,8 @@ from random_functions import *
 from input_validation import handle_input
 from table import create_table
 import callback_functions
+
+# Built in Modules - Python 3
 import time
 
 
@@ -16,6 +18,7 @@ class Admin:
             "People": [self.people, self.people_ids],
             "Supermarkets": [self.supermarkets, self.sp_ids],
         }
+        # object_data = {"People": [[], []], "Supermarkets": [[], []]}
 
 
 class GlobalFunctions:
@@ -190,6 +193,14 @@ class Supermarket:
         }
         return report
 
+    def counter(self, person):
+        # access their bag
+        # Show the bag
+        # you will calculate their total amount and add taxes
+        # youll ask them the total amount that they want to give
+        # check for discounts
+        pass
+
     def __str__(self) -> str:
         return self.name
 
@@ -203,6 +214,7 @@ class Person:
         self.super_market = super_market
         # self.bag = []
         self.bag = [
+            ["Products", "Price", "Quantity"],
             ["Cofeee", "24", "1"],
             ["Hamburger", "2454", "2"],
             ["Pancakes", "44", "1"],
@@ -318,4 +330,4 @@ if __name__ == "__main__":
     menu = Menu(my_admin)
     menu.stateful_menu()
     # print(my_admin.selected_person)
-    # object_data = {"People": [[], []], "Supermarkets": [[], []]}
+

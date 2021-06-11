@@ -1,3 +1,4 @@
+# NOT IN DEVELOPMENT
 # supermarket = sp or market
 from random_functions import *
 from input_validation import handle_input
