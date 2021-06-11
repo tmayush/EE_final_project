@@ -33,6 +33,7 @@ products = {
         "pork": {"Price": 80, "id": 1},
     },
 }
+
 for i in products:
     for j in products[i]:
         print(i, "-", j, "-", products[i][j])

@@ -22,8 +22,8 @@ object_data = {"People": [people, people_ids], "Supermarkets": [supermarkets, sp
 #     return name
 
 
-# def jkk(id):
-#     return global_states[id]
+def create_supermarket(name, temperature_limit, object_data):
+    super_market = Supermarket(name, temperature_limit, object_data["Supermarkets"][1])
 
 
 # global_states = {
@@ -32,8 +32,7 @@ object_data = {"People": [people, people_ids], "Supermarkets": [supermarkets, sp
 #         {"Create Person": jkk("Create Person")},
 #         {"Choose Supermarket": jkk("Choose Supermarket")},
 #         {"Choose Person": jkk("Choose Person")},
-#     ],
-#     "Create Supermarket": sc_market,
+#     ]
 # }
 # print(type(jkk))
 # ------------/Development --------
@@ -47,8 +46,6 @@ object_data = {"People": [people, people_ids], "Supermarkets": [supermarkets, sp
 #     ]
 # }
 
-# products = ["Milk", "Cerial"]
-# products = {"Dairy": ["Milk"],"Fasion":[]}
 # States that a person can have:
 # - out_market = the person is outside the market
 # - in_market = the person is in market but not doing anythin
@@ -64,9 +61,11 @@ class Supermarket:
         # self.closing_time = closing_time
         self.name = name
         self.id = gen_id(1, 100, id_list)
-        object_data["Supermarkets"][0].append(self)
         self.max_temperature = float(max_temperature)
         self.people = []
+
+        id_list.append(self.id)
+        object_data["Supermarkets"][0].append(self)
 
     def number_of_people(self):
         return len(self.people)
@@ -127,14 +126,17 @@ class Person:
         return report
 
 
-# class Menu:
-#     def __init__(self) -> None:
-#         pass
-#     def stateful_menu(self, state):
-#         menu_array = global_states.get(state, "invalid state")
-#         for index, item in enumerate(menu_array):
-#             print(f"{index+1}. " f"{item}")
-# menu = Menu()
+class Menu:
+    def __init__(self) -> None:
+        pass
+
+    # def stateful_menu(self, state, state_function):
+    #     menu_array = global_states.get(state, "invalid state")
+    #     for index, item in enumerate(menu_array):
+    #         print(f"{index+1}. " f"{item}")
+
+
+menu = Menu()
 # menu.stateful_menu("global")
 
 super_market = Supermarket("Walmart", 99.0, object_data["Supermarkets"][1])
@@ -147,7 +149,6 @@ person2.enter_market(super_market)
 print(person2.state)
 
 print(object_data)
-
 # 1. 1243 - Jim
 # 2. 3242 - no name provided
 

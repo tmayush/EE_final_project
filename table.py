@@ -43,20 +43,21 @@ def create_table(my_list, width_factor, absolute_width=False):
     return my_list
 
 
-hello = [
-    ["Cofeee", "24", "1"],
-    ["Hamburger", "2454", "2"],
-    ["Pancakes", "44", "1"],
-]
+if __name__ == "__main__":
+    hello = [
+        ["Cofeee", "24", "1"],
+        ["Hamburger", "2454", "2"],
+        ["Pancakes", "44", "1"],
+    ]
 
-new_list = create_table(hello, 4)
-if new_list:
-    for line in new_list:
-        final_line = ""
-        for word in line:
-            final_line += f"|{word}"
-        final_line += "|"
-        print(final_line)
-else:
-    print("Table Creation Failed")
+    new_list = create_table(hello, 4)
+    if new_list:
+        for line in new_list:
+            final_line = ""
+            for word in line:
+                final_line += f"|{word}"
+            final_line += "|"
+            print(final_line)
+    else:
+        print("Table Creation Failed")
 

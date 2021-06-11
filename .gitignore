@@ -1,3 +1,13 @@
+# General Files
 *.docx
-test.py
+*test*
 /__pycache__
+
+# Public Files
+*public*
+
+# Collaborater's code files
+*manikesh*
+*kushal*
+*paramjeet*
+*manikundan*
