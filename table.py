@@ -28,6 +28,8 @@ def distributeSpace(string, max_width=0, space_before=0, space_after=0):
 
 # Use this (below)
 def create_table(my_list, width_factor, absolute_width=False):
+    # Creates a copy of the 2D list
+    my_list = [item[:] for item in my_list]
     max_width_list = calculate_max_width(my_list)
     number_of_words = len(my_list[0])
     for word_index in range(number_of_words):
@@ -50,7 +52,6 @@ if __name__ == "__main__":
         ["Hamburger", "2454", "2"],
         ["Pancakes", "44", "1"],
     ]
-
     new_list = create_table(hello, 4)
     if new_list:
         for line in new_list:
