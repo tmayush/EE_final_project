@@ -1,5 +1,5 @@
 products = {
-    "eatables": {
+    "Eatables": {
         "Beverages": {
             "pepsi": {"Price": 80, "id": 1},
             "cococola": {"Price": 80, "id": 1},

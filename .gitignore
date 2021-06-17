@@ -1,7 +1,7 @@
 # General Files
 *.docx
 *test*
-/__pycache__
+*__pycache__*
 
 # tesign cases
 prototype_01.py
