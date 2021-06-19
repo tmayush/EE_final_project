@@ -3,6 +3,7 @@ from supermarket.helper_functions import input_validation
 from supermarket.helper_functions import callback_functions
 from supermarket.functional_logic.entities import Supermarket
 from supermarket.functional_logic.entities import Person
+from supermarket.logging import create_report
 
 # Under Development - Have to work on the choose supermarket function
 class GlobalFunctions:
@@ -39,6 +40,7 @@ class GlobalFunctions:
                     break
 
         Supermarket(results[0], results[1], self.my_menu, id_list)
+        create_report.create_report("log", self.my_menu)
         return True
 
     def create_person(self):
@@ -79,6 +81,7 @@ class GlobalFunctions:
             )
             return False
         Person(results[0], results[1], results[2], self.my_menu, id_list)
+        create_report.create_report("log", self.my_menu)
         return True
 
     def choose_supermarket(self):
@@ -141,6 +144,12 @@ class GlobalFunctions:
         }
 
         self.my_menu.state = back_statements[self.my_menu.state]
+
+    def generate_report(self):
+        # file_location = "./supermarket/logging/"
+        # file_name = "logging.json"
+        create_report.create_report("user_report", self.my_menu)
+        return True
 
     def pre_tests(self, state):
         def pre_person():

@@ -36,6 +36,7 @@ class Menu:
                 {"Create Person": global_functions.create_person},
                 {"Choose Supermarket": global_functions.choose_supermarket},
                 {"Choose Person": global_functions.choose_person},
+                {"Generate Report": global_functions.generate_report},
                 {"Exit": False},
             ]
         }

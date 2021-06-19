@@ -101,9 +101,13 @@ class Person:
     def generate_report(self):
         report = {
             "Person ID": self.id,
-            "Supermarket": self.super_market,
+            "Person Name": self.name,
+            "Supermarket Name": self.super_market.name,
+            "Items Present In Bag": str(self.bag),
             "Temperature": self.temperature,
         }
+        if self.start_time is not None:
+            report["Time Spent"] = str(self.time_elapsed())
         return report
 
     def __str__(self) -> str:

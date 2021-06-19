@@ -1,0 +1,11 @@
+{
+  "app_name": "supermarket",
+  "logger_info": {
+    "file_location": "./supermarket/logs/",
+    "file_name": "entity_creation_log.json"
+  },
+  "report_info": {
+    "file_location": "./reports/",
+    "file_name": "report.json"
+  }
+}

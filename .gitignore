@@ -1,14 +1,15 @@
-# General Files
+# General Files/Folders
 *.docx
 *test*
 *__pycache__*
 
-# tesign cases
+# testing cases
 prototype_01.py
 prototype_02.py
 
-# Public Files
+# Public Folders
 *public*
+# /other files
 
 # Collaborater's code files
 *manikesh*
