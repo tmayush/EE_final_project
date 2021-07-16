@@ -45,6 +45,18 @@ def create_table(my_list, width_factor, absolute_width=False):
     return my_list
 
 
+def print_table(table):
+    if table:
+        for line in table:
+            final_line = ""
+            for word in line:
+                final_line += f"|{word}"
+            final_line += "|"
+            print(final_line)
+    else:
+        print("Table Creation Failed")
+
+
 if __name__ == "__main__":
     hello = [
         ["Products", "Price", "Quantity"],

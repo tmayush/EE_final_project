@@ -4,6 +4,7 @@ if __name__ == "__main__":
     sys.path.append(os.getcwd())
 
 # Importing Helper Functions
+from supermarket.functional_logic.entities import Person, Supermarket
 from supermarket.helper_functions import input_validation
 from supermarket.functional_logic import menu_functions
 
@@ -52,6 +53,7 @@ class Menu:
                 {"Choose Products": None},
                 {"Look Inside Bag": my_admin.selected_person.check_bag},
                 {"Check Time Elapsed": my_admin.selected_person.time_elapsed},
+                {"Checkout to Counter": global_functions.checkout},
                 {"back": global_functions.back_functions},
             ]
 
@@ -80,6 +82,12 @@ class Menu:
                 callback_function(self)
             elif callback_function:
                 callback_function()
+                if callback_function == global_functions.checkout:
+                    self.state = "global"
+                # for index, person in enumerate(self.my_admin.object_data["People"][0]):
+                #     if person == self.my_admin.selected_person:
+                #         break
+                # self.my_admin.object_data["People"][0].pop(index)
             else:
                 break
             self.check_changes()
@@ -89,4 +97,11 @@ my_admin = Admin()
 global_functions = menu_functions.GlobalFunctions(my_admin)
 menu = Menu(my_admin)
 global_functions.my_menu = menu
-
+Supermarket("Walmart", 99, menu, my_admin.object_data["Supermarkets"][1])
+Person(
+    "William",
+    98,
+    my_admin.object_data["Supermarkets"][0][0],
+    menu,
+    my_admin.object_data["People"][1],
+)

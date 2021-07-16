@@ -1,6 +1,13 @@
+# datetime is used for printing the bill
+import datetime
+
 # Importing Helper Functions
+from supermarket.helper_functions.table import create_table, print_table
 from supermarket.helper_functions import input_validation
 from supermarket.helper_functions import callback_functions
+from supermarket.helper_functions import random_functions
+
+# Importing Functional Logic (Involves entites and report creation)
 from supermarket.functional_logic.entities import Supermarket
 from supermarket.functional_logic.entities import Person
 from supermarket.logging import create_report
@@ -150,6 +157,61 @@ class GlobalFunctions:
         # file_name = "logging.json"
         create_report.create_report("user_report", self.my_menu)
         return True
+
+    # def products(self):
+
+    def checkout(self):
+        bag, bill_id, total_amount, supermarket_name = (
+            self.my_admin.selected_person.bag.copy(),
+            random_functions.gen_id(1000, 9999, []),
+            0,
+            self.my_admin.selected_person.super_market.name,
+        )
+        raw_date_info = datetime.datetime.now()
+        date_info = {
+            "day": raw_date_info.strftime("%d"),
+            "month": raw_date_info.strftime("%m"),
+            "year": raw_date_info.strftime("%y"),
+            "weekday": raw_date_info.strftime("%A"),
+            "longtime": raw_date_info.strftime("%X"),
+        }
+        date_print = f"{date_info['day']}/{date_info['month']}/{date_info['year']}"
+        weekday_print = date_info["weekday"]
+        time_print = date_info["longtime"]
+        while True:
+            response = input(
+                "There's a 10% discount on your bill, would you like to apply it to your amount? (YES/NO) "
+            ).upper()
+            if response == "YES" or response == "NO":
+                break
+            print("Invalid Response")
+
+        # -------------BILL PRINTING--------------
+        print(f"\n\t\t\tWelcome to {supermarket_name}")
+        print(f"\n\t\t\tBILL ID: {bill_id}\n")
+        print(f"DATE: {date_print} | {weekday_print}\t\tTIME: {time_print}\n")
+        for index, item in enumerate(bag):
+            if index == 0:
+                continue
+            total_amount += int(item[1]) * int(item[2])
+        bag.append(["TOTAL", "", f"{total_amount}"])
+        product_bill = create_table(bag, 2)
+        print_table(product_bill)
+        print("\n")
+
+        if response == "YES":
+            total_amount = total_amount - round(0.1 * total_amount)
+            print(f"Your new total amount is {total_amount}")
+
+        while True:
+            respose = input(f"Press enter to pay {total_amount}/- ")
+            if respose == "":
+                break
+            print('Please press "enter" to pay')
+        print("AMOUNT PAYED!")
+        print("Thank you for visiting us! Please visit again")
+        print("\n")
+        # -------------/BILL PRINTING--------------
 
     def pre_tests(self, state):
         def pre_person():

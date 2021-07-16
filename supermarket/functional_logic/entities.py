@@ -69,8 +69,8 @@ class Person:
         self.end_time = None
 
     def time_elapsed(self):
-        calc_time_elapsed = time.time() - self.start_time
-        print(f"Time Elapsed - {calc_time_elapsed}\n")
+        calc_time_elapsed = round(time.time() - self.start_time)
+        print(f"Time Elapsed - {calc_time_elapsed} seconds\n")
         return calc_time_elapsed
 
     def enter_market(self):
@@ -107,7 +107,7 @@ class Person:
             "Temperature": self.temperature,
         }
         if self.start_time is not None:
-            report["Time Spent"] = str(self.time_elapsed())
+            report["Time Spent"] = str(round(time.time() - self.start_time))
         return report
 
     def __str__(self) -> str:
