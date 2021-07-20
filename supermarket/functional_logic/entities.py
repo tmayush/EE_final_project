@@ -12,6 +12,7 @@ class Supermarket:
         self.id = random_functions.gen_id(1, 100, id_list)
         self.max_temperature = float(max_temperature)
         self.people = []
+        self.city = "Hyderabad"
 
         id_list.append(self.id)
         my_menu.my_admin.object_data["Supermarkets"][0].append(self)
@@ -53,13 +54,13 @@ class Person:
         self.name = name
         self.temperature = float(temperature)
         self.super_market = super_market
-        # self.bag = []
-        self.bag = [
-            ["Products", "Price", "Quantity"],
-            ["Cofeee", "24", "1"],
-            ["Hamburger", "2454", "2"],
-            ["Pancakes", "44", "1"],
-        ]
+        self.bag = []
+        # self.bag = [
+        #     ["Products", "Price", "Quantity"],
+        #     ["Cofeee", "24", "1"],
+        #     ["Hamburger", "2454", "2"],
+        #     ["Pancakes", "44", "1"],
+        # ]
 
         id_list.append(self.id)
         my_menu.my_admin.object_data["People"][0].append(self)

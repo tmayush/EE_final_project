@@ -7,5 +7,9 @@
   "report_info": {
     "file_location": "./reports/",
     "file_name": "report.json"
+  },
+  "products_info": {
+    "file_location": "./supermarket/products/",
+    "file_name": "product_menu.json"
   }
 }

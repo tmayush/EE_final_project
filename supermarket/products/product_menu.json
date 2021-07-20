@@ -1,0 +1,101 @@
+{
+  "Food": {
+    "Beverages": {
+      "Pepsi": { "Price": 65, "Id": 1001 },
+      "Cococola": { "Price": 60, "Id": 1011 },
+      "Sprite": { "Price": 65, "Id": 1033 }
+    },
+    "Bread": {
+      "Sandwich loaves": { "Price": 20, "Id": 1101 },
+      "Dinner rolls": { "Price": 80, "Id": 1111 },
+      "Tortillas": { "Price": 120, "Id": 1133 },
+      "Bagels": { "Price": 80, "Id": 1155 }
+    },
+    "Vegetables": {
+      "Curryleaf": { "Price": 10, "Id": 1201 },
+      "Cauliflower": { "Price": 30, "Id": 1223 },
+      "Carrot": { "Price": 20, "Id": 1233 }
+    },
+    "Dairy": {
+      "Cheese": { "Price": 30, "Id": 1301 },
+      "Eggs": { "Price": 60, "Id": 1324 },
+      "Milk": { "Price": 24, "Id": 1343 },
+      "Yogurt": { "Price": 30, "Id": 1359 },
+      "Butter": { "Price": 30, "Id": 1388 }
+    },
+    "FrozenFoods": {
+      "Waffles": { "Price": 20, "Id": 1423 },
+      "Icecream": { "Price": 80, "Id": 1453 }
+    },
+    "Meat": {
+      "Lunch meat": { "Price": 80, "Id": 1511 },
+      "Poultry": { "Price": 80, "Id": 1524 },
+      "Beef": { "Price": 80, "Id": 1536 },
+      "Pork": { "Price": 80, "Id": 1548 }
+    }
+  },
+  "Sports": {
+    "Cricket": {
+      "Bat": { "Price": 1000, "Id": 1611 },
+      "Ball": { "Price": 60, "Id": 1624 },
+      "Legpads": { "Price": 500, "Id": 1635 },
+      "Wickets": { "Price": 600, "Id": 1648 },
+      "Guards": { "Price": 500, "Id": 1664 }
+    },
+    "Football": {
+      "Football": { "Price": 500, "Id": 1712 },
+      "Shoes": { "Price": 2000, "Id": 1735 },
+      "Socks": { "Price": 200, "Id": 1756 },
+      "Gloves": { "Price": 300, "Id": 1788 }
+    },
+    "Volleyball": {
+      "Volleyball": { "Price": 600, "Id": 1814 },
+      "Anklebraces": { "Price": 200, "Id": 1823 },
+      "Kneepads": { "Price": 100, "Id": 1862 },
+      "Shoes": { "Price": 600, "Id": 1844 },
+      "Duffle Bag": { "Price": 500, "Id": 1887 }
+    },
+    "Basketball": {
+      "Basketball": { "Price": 500, "Id": 1912 },
+      "Shorts": { "Price": 300, "Id": 1935 },
+      "Shoes": { "Price": 1000, "Id": 1946 },
+      "Socks": { "Price": 100, "Id": 1985 }
+    }
+  },
+  "Books": {
+    "Action": {
+      "58 Minutes (1987)": { "Price": 300, "Id": 2012 },
+      "The Bourne Identity (1980)": { "Price": 500, "Id": 2053 },
+      "The Chinaman (1992)": { "Price": 600, "Id": 2068 },
+      "Man on Fire (1980)": { "Price": 500, "Id": 2096 }
+    },
+    "Comedy": {
+      "Brewsters Millions": { "Price": 400, "Id": 2123 },
+      "Just Shocking": { "Price": 530, "Id": 2141 },
+      "The Darling Buds of May": { "Price": 540, "Id": 2165 },
+      "Spud": { "Price": 600, "Id": 2178 },
+      "The Wrong Box": { "Price": 650, "Id": 2186 },
+      "The Brush-Off ": { "Price": 500, "Id": 2198 }
+    },
+    "Drama": {
+      "Then She Was Gone": { "Price": 500, "Id": 2210 },
+      "Before We Were Yours": { "Price": 550, "Id": 2223 },
+      "Where the Crawdads Sing": { "Price": 450, "Id": 2256 },
+      "The Silent Wife": { "Price": 500, "Id": 2243 },
+      "Small Great Things": { "Price": 600, "Id": 2259 }
+    },
+    "Horror": {
+      "House of Leaves": { "Price": 450, "Id": 2311 },
+      "Rosemarys Baby": { "Price": 500, "Id": 2326 },
+      "Lord of the Flies": { "Price": 650, "Id": 2354 },
+      "Night Film": { "Price": 450, "Id": 2349 }
+    },
+    "Thriller": {
+      "Gone Girl": { "Price": 500, "Id": 4231 },
+      "The Silent Patient": { "Price": 459, "Id": 4352 },
+      "A Time to Kill": { "Price": 599, "Id": 5231 },
+      "And Then There Were None": { "Price": 500, "Id": 5463 },
+      "Before I Go to Sleep": { "Price": 500, "Id": 5644 }
+    }
+  }
+}

@@ -12,6 +12,9 @@ from supermarket.functional_logic.entities import Supermarket
 from supermarket.functional_logic.entities import Person
 from supermarket.logging import create_report
 
+# Importing products functions
+from supermarket.products import products
+
 # Under Development - Have to work on the choose supermarket function
 class GlobalFunctions:
     def __init__(self, my_admin) -> None:
@@ -47,7 +50,9 @@ class GlobalFunctions:
                     break
 
         Supermarket(results[0], results[1], self.my_menu, id_list)
+        # ------------Logging------------
         create_report.create_report("log", self.my_menu)
+        # -----------/Logging------------
         return True
 
     def create_person(self):
@@ -88,7 +93,9 @@ class GlobalFunctions:
             )
             return False
         Person(results[0], results[1], results[2], self.my_menu, id_list)
+        # ------------Logging------------
         create_report.create_report("log", self.my_menu)
+        # -----------/Logging------------
         return True
 
     def choose_supermarket(self):
@@ -156,16 +163,25 @@ class GlobalFunctions:
         # file_location = "./supermarket/logging/"
         # file_name = "logging.json"
         create_report.create_report("user_report", self.my_menu)
+        # ------------Logging------------
+        create_report.create_report("log", self.my_menu)
+        # -----------/Logging------------
+
         return True
 
-    # def products(self):
+    def products(self):
+        products.product_selection(self.my_admin.selected_person.bag)
+        # ------------Logging------------
+        create_report.create_report("log", self.my_menu)
+        # -----------/Logging------------
 
     def checkout(self):
-        bag, bill_id, total_amount, supermarket_name = (
+        bag, bill_id, total_amount, supermarket_name, supermarket_city = (
             self.my_admin.selected_person.bag.copy(),
             random_functions.gen_id(1000, 9999, []),
             0,
             self.my_admin.selected_person.super_market.name,
+            self.my_admin.selected_person.super_market.city,
         )
         raw_date_info = datetime.datetime.now()
         date_info = {
@@ -186,8 +202,9 @@ class GlobalFunctions:
                 break
             print("Invalid Response")
 
-        # -------------BILL PRINTING--------------
+        # --------------BILL PRINTING--------------
         print(f"\n\t\t\tWelcome to {supermarket_name}")
+        print(f"\n\t\t\t  {supermarket_city}")
         print(f"\n\t\t\tBILL ID: {bill_id}\n")
         print(f"DATE: {date_print} | {weekday_print}\t\tTIME: {time_print}\n")
         for index, item in enumerate(bag):
@@ -212,6 +229,9 @@ class GlobalFunctions:
         print("Thank you for visiting us! Please visit again")
         print("\n")
         # -------------/BILL PRINTING--------------
+        # ------------Logging------------
+        create_report.create_report("log", self.my_menu)
+        # -----------/Logging------------
 
     def pre_tests(self, state):
         def pre_person():

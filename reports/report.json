@@ -1,23 +1,17 @@
 {
   "People": [
     {
-      "Person ID": 1831,
+      "Person ID": 9413,
       "Person Name": "William",
       "Supermarket Name": "Walmart",
-      "Items Present In Bag": "[['Products', 'Price', 'Quantity'], ['Cofeee', '24', '1'], ['Hamburger', '2454', '2'], ['Pancakes', '44', '1']]",
-      "Temperature": 98.0
-    },
-    {
-      "Person ID": 9997,
-      "Person Name": "dreekar",
-      "Supermarket Name": "Walmart",
-      "Items Present In Bag": "[['Products', 'Price', 'Quantity'], ['Cofeee', '24', '1'], ['Hamburger', '2454', '2'], ['Pancakes', '44', '1']]",
-      "Temperature": 98.0
+      "Items Present In Bag": "[['ITEMS', 'PRICE', 'QUANTITY'], ['Pepsi', '65', '2'], ['Gloves', '300', '3']]",
+      "Temperature": 98.0,
+      "Time Spent": "77"
     }
   ],
   "Supermarkets": [
     {
-      "Supermarket ID": 91,
+      "Supermarket ID": 67,
       "Name of the Supermarket": "Walmart",
       "Temperature Limit": 99.0
     }

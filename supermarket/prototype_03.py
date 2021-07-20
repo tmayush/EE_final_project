@@ -50,7 +50,7 @@ class Menu:
                 {"back": global_functions.back_functions},
             ]
             self.global_states["in_market"] = [
-                {"Choose Products": None},
+                {"Choose Products": global_functions.products},
                 {"Look Inside Bag": my_admin.selected_person.check_bag},
                 {"Check Time Elapsed": my_admin.selected_person.time_elapsed},
                 {"Checkout to Counter": global_functions.checkout},
